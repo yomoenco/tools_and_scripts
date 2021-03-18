@@ -26,12 +26,16 @@ usage() {
     echo " "
 }
 
-if [ "$1" == "" ] || [[ "$@" == *--help* ]]; then
+if [ "$1" == "" ]; then 
     echo ""
-    echo "ERROR:"
+    echo "ERROR: missing parameter"
     echo ""
     usage
     exit 1
+elif  [[ "$@" == *--help* ]]; then
+    echo ""
+    usage
+    exit
 fi
 
 target="$1"
